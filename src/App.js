@@ -32,10 +32,11 @@ export default function App() {
       return;
     }
 
+    const repository = response.data;
     const newRepositories = [...repositories];
     const repositoryIndex = newRepositories.findIndex(repository => repository.id === id);
 
-    newRepositories[repositoryIndex].likes += 1;
+    newRepositories[repositoryIndex] = repository;
 
     setRepositories(newRepositories);
   }
